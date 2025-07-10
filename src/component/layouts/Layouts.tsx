@@ -9,20 +9,21 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+/** @param: width => number 타입을 받아 vw 단위로 width를 결정합니다.
+ *  @param: gap => gap 타입을 받아 vw 단위로 width를 결정합니다.
+ * :*/
 export const PageContainer = styled.div<{
   width: number;
-  marginTop?: number;
   gap?: number;
 }>(
-  ({ width, marginTop = 3, gap = 1 }) => css`
-    width: ${width}px;
+  ({ width, gap = 1 }) => css`
+    width: ${width}vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: ${gap}vw;
     box-sizing: border-box;
-    margin-top: ${marginTop}vw;
   `,
 );
 
@@ -93,15 +94,14 @@ export function GlobalStyled() {
           align-items: flex-start;
         }
 
-        button {
-          border-radius: 8px;
-          border: 1px solid transparent;
-          padding: 0.6em 1.2em;
-          font-size: 1em;
-          font-weight: 500;
-          font-family: inherit;
-          background-color: #1a1a1a;
-          transition: border-color 0.25s;
+        div[data-overlay-container="true"] {
+          width: 100vw !important;
+          max-width: 100%;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
         }
 
         a {
@@ -194,14 +194,14 @@ export const MainTitleLine = styled.div<{ theme: Theme }>(
   justify-content: space-between;
   align-items: center;
   
-  font-family: ${theme.mode.font.component.mainTitle};
+  font-family: ${theme.mode.font.component.title};
   }
 `,
 );
 
 export const MainTitle = styled.h2<{ theme: Theme }>(
   ({ theme }) => css`
-    font-family: ${theme.mode.font.component.mainTitle};
+    font-family: ${theme.mode.font.component.title};
     color: ${theme.mode.textPrimary};
     cursor: pointer;
   `,
@@ -328,7 +328,7 @@ export const ItemTitle = styled.h4<{ theme: Theme }>(
   ({ theme }) => css`
     color: ${theme.mode.textPrimary};
     text-transform: uppercase;
-    font-family: ${theme.mode.font.component.itemTitle};
+    font-family: ${theme.mode.font.component.title};
     margin-top: 10px;
     margin-bottom: 0;
     cursor: pointer;

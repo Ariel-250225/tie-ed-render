@@ -2,7 +2,7 @@
 import styled from "@emotion/styled";
 import { css, Theme, useTheme } from "@emotion/react";
 import { FuncItem } from "../styled/Button/Button";
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 import inner_casino from "../../assets/image/inner_casino.jpg";
 import casino_lounge from "../../assets/image/casino_lounge.jpg";
@@ -14,7 +14,7 @@ import poker_video from "../../assets/video/poker_video.mp4";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { useWindowContext } from "../../context/WindowContext";
 import { FlipBox } from "../Card/Flip";
-import { ContentsContainer } from "../layouts";
+import { useWindowResponsiveHeight } from "../../hooks/useWindowHooks";
 
 const IMAGE_LIST = [
   inner_casino,
@@ -31,16 +31,11 @@ export function DisplayIntro() {
   const [videoFadingOut, setVideoFadingOut] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
-  const [flipContainerHeight, setFlipContainerHeight] = useState<number>(0);
   const flipRef = useRef<HTMLDivElement>(null);
 
   const { windowWidth } = useWindowContext();
 
-  useLayoutEffect(() => {
-    if (flipRef.current) {
-      setFlipContainerHeight(flipRef.current.offsetHeight);
-    }
-  }, [selectedIndex]);
+  const responsiveHeight = useWindowResponsiveHeight(0.3655, 150);
 
   useEffect(() => {
     setVideoShownIndex(selectedIndex);
@@ -198,34 +193,32 @@ export function DisplayIntro() {
 
   return (
     <>
-      <ContentsContainer
-        css={css`
-          height: ${flipContainerHeight}px;
-          position: relative;
-          overflow: visible;
-        `}
-      >
-        <FilpContainer ref={flipRef}>
-          <FlipBox
-            nodeList={childrenList}
-            maxWidth={windowWidth}
-            selectedIndex={selectedIndex}
-            setSelectedIndex={setSelectedIndex}
-          />
-        </FilpContainer>
-      </ContentsContainer>
+      <FlipContainer ref={flipRef} height={responsiveHeight}>
+        <FlipBox
+          nodeList={childrenList}
+          maxWidth={windowWidth}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
+      </FlipContainer>
     </>
   );
 }
 
-const FilpContainer = styled.div`
-  width: 100%;
-`;
+const FlipContainer = styled.div<{ height: number }>(
+  ({ height }) => css`
+    width: 100%;
+    height: ${height}px;
+    justify-content: flex-start;
+    position: relative;
+    overflow: visible;
+  `,
+);
 
 const Title = styled.span<{ theme: Theme }>(
   ({ theme }) => css`
     font-size: 2.4em;
-    font-family: ${theme.mode.font.banner.title};
+    font-family: ${theme.mode.font.component.title};
     font-weight: 600;
   `,
 );
@@ -233,7 +226,7 @@ const Title = styled.span<{ theme: Theme }>(
 const Description = styled.span<{ theme: Theme }>(
   ({ theme }) => css`
     font-size: 1.1em;
-    font-family: ${theme.mode.font.banner.description};
+    font-family: ${theme.mode.font.component.description};
     font-weight: 500;
   `,
 );

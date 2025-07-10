@@ -55,7 +55,7 @@ const IconBox = styled.div<{ theme: Theme; width?: number; height?: number }>(
 
 const AppName = styled(EllipsisCase)<{ theme: Theme }>(
   ({ theme }) => css`
-    font-family: ${theme.mode.font.button.default};
+    font-family: ${theme.mode.font.button};
     font-size: 15px;
   `,
 );
@@ -80,7 +80,7 @@ export const StyledFuncButton = styled(Button)<{
   theme: Theme;
 }>(
   ({ theme }) => css`
-    font-family: ${theme.mode.font.button.default};
+    font-family: ${theme.mode.font.button};
     font-weight: 800;
     background-color: ${theme.mode.buttonBackground};
 

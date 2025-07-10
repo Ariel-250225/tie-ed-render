@@ -27,29 +27,43 @@ const fontSize = {
 
 const fontStyle = {
   serif: "sans-serif",
-  nanumGothic: "Nanum Gothic, Tofu",
-  futuraDisplay: "Futura Display",
   iBrand: "iBrand",
-  gothamMedium: "GothamMedium",
-  pacificoRegular: "Pacifico, cursive",
-  catallina: "Catallina",
+
+  /* 독특한 */
   picoBl: "PicoBl",
   picoW: "PicoW",
+  futuraDisplay: "Futura Display",
+  catallina: "Catallina",
+
+  /* 세리프 계열 */
+  nanumGothic: "Nanum Gothic, Tofu",
+  archivo: "Archivo, sans-serif",
+  poppins: "Poppins, sans-serif",
+  montserrat: "Montserrat, sans-serif",
+
+  /* 필기체 */
+  pacificoRegular: "Pacifico, cursive",
+
+  /* 신문느낌 */
   tradeGothicBold: "Trade Gothic LT Std Bold Condensed No. 20",
   tradeGothicRegular: "Trade Gothic LT Std Regular",
+  gothamMedium: "GothamMedium",
+  robotoCondensed: "Roboto Condensed, sans-serif;",
+  roboto: "Roboto, sans-serif",
+
+  Merriweather: "Merriweather, serif",
+
+  /* 바탕체 */
+  playfair: "Playfair Display, sans-serif",
+  bondoniMonda: "Bodoni Moda",
+
   hanArum: "Han Arum",
   yesGothicBold: "YES Gothic bold",
   yesGothicExtraBold: "YES Gothic extra bold",
   yesGothicMedium: "YES Gothic medium",
   yesGothicRegular: "YES Gothic regular",
   yesGothicLight: "YES Gothic light",
-  roboto: "Roboto, sans-serif",
-  robotoCondensed: "Roboto Condensed, sans-serif;",
-  montserrat: "Montserrat, sans-serif",
-  poppins: "Poppins, sans-serif",
-  archivo: "Archivo, sans-serif",
-  katibeh: "Katibeh, sans-serif",
-  playfair: "Playfair Display, sans-serif",
+
   appleNeoBold: "Apple SD Gothic Neo Bold",
   sCoreDreamThin: "S-CORE-Dream thin",
   sCoreDreamExtraLight: "S-CORE-Dream thin extra light",
@@ -82,6 +96,7 @@ const colors = {
 
   // ✅ Primary Colors
   vividCerulean: "#00A0FF",
+  blueBikini: "#00aeef",
   skyBlue: "#007BFF",
   deepBlue: "#0056D2",
   royalBlue: "#003C99",
@@ -98,6 +113,7 @@ const colors = {
   ashGray: "#D6D6D6",
   steelGray: "#A0A0A0",
   graniteGray: "#606060",
+  gunmetalGray: "#5A5A5A",
   softWhiteGray: "#F2F2F2", // 기존 whiteGray
   brightGray: "#E6EEF3",
   lightGray: "#B0B0B0",
@@ -197,31 +213,25 @@ const lightMode = {
     header: {
       menuItem: fontStyle.yesGothicExtraBold,
     },
-    banner: {
-      title: fontStyle.playfair,
-      description: fontStyle.yesGothicRegular,
-    },
-    snb: {
-      menuText: fontStyle.roboto,
-    },
-    navigation: {
-      item: fontStyle.koPubDotumBold,
-    },
-    button: {
-      default: fontStyle.gothamMedium,
-    },
-    search: fontStyle.yesGothicMedium,
-    component: {
-      mainTitle: fontStyle.montserrat,
-      itemTitle: fontStyle.nanumGothic,
-      itemDescription: fontStyle.yesGothicMedium,
-    },
-    dynamicIsland: {
-      stateView: fontStyle.yesGothicExtraBold,
-    },
-    empty: {
+    main: {
       title: fontStyle.koPubDotumBold,
+      component: {
+        title: fontStyle.montserrat,
+        description: fontStyle.poppins,
+      },
     },
+    component: {
+      title: fontStyle.tradeGothicBold,
+      description: fontStyle.poppins,
+    },
+    banner: {
+      collection: {
+        title: fontStyle.sCoreDreamBold,
+      },
+    },
+
+    /* layout */
+    button: fontStyle.archivo,
   },
 };
 
@@ -281,31 +291,25 @@ const darkMode = {
     header: {
       menuItem: fontStyle.yesGothicExtraBold,
     },
-    banner: {
-      title: fontStyle.playfair,
-      description: fontStyle.archivo,
-    },
-    snb: {
-      menuText: fontStyle.roboto,
-    },
-    navigation: {
-      item: fontStyle.appleNeoBold,
-    },
-    search: fontStyle.yesGothicMedium,
-    component: {
-      mainTitle: fontStyle.montserrat,
-      itemTitle: fontStyle.nanumGothic,
-      itemDescription: fontStyle.yesGothicMedium,
-    },
-    dynamicIsland: {
-      stateView: fontStyle.yesGothicExtraBold,
-    },
-    button: {
-      default: fontStyle.roboto,
-    },
-    empty: {
+    main: {
       title: fontStyle.koPubDotumBold,
+      component: {
+        title: fontStyle.montserrat,
+        description: fontStyle.poppins,
+      },
     },
+    component: {
+      title: fontStyle.playfair,
+      description: fontStyle.poppins,
+    },
+    banner: {
+      collection: {
+        title: fontStyle.sCoreDreamBold,
+      },
+    },
+
+    /* layout */
+    button: fontStyle.archivo,
   },
 };
 
