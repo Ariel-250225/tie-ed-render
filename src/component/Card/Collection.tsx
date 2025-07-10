@@ -47,7 +47,7 @@ const CollectionWrapper = styled.article<{ theme: Theme }>(
     align-items: center;
     position: relative;
     scroll-snap-align: center;
-    font-family: ${theme.mode.font.component.mainTitle};
+    font-family: ${theme.mode.font.banner.collection.title};
     flex-shrink: 0;
   `,
 );

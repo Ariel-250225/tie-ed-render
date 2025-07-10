@@ -70,7 +70,7 @@ const FlipContainer = styled.article<{ length: number; maxWidth: number }>(
     max-width: ${maxWidth}px;
     display: grid;
     grid-gap: 0.5vw;
-    margin: auto 0;
+    margin: 0 auto;
     grid-template-columns: repeat(${length}, 1fr);
   `,
 );

@@ -47,3 +47,29 @@ export const useProportionSizeHook = (
   }, [independent, parameter, dependentWidth, dependentHeight]);
   return { size };
 };
+
+/**
+ * 실시간으로 window.innerWidth를 기준으로
+ * height = slope * width + intercept 공식을 적용합니다.
+ *
+ * @param slope - 기울기 (ex: 0.444)
+ * @param intercept - 절편 (ex: 82.3)
+ */
+export const useWindowResponsiveHeight = (slope: number, intercept: number) => {
+  const [height, setHeight] = useState(
+    () => slope * window.innerWidth + intercept,
+  );
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setHeight(slope * window.innerWidth + intercept);
+    };
+
+    window.addEventListener("resize", updateHeight);
+    updateHeight(); // 초기화
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [slope, intercept]);
+
+  return height;
+};
