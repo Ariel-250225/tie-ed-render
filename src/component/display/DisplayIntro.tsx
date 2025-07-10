@@ -4,25 +4,20 @@ import { css, Theme, useTheme } from "@emotion/react";
 import { FuncItem } from "../styled/Button/Button";
 import { Fragment, useEffect, useRef, useState } from "react";
 
-import inner_casino from "../../assets/image/inner_casino.jpg";
-import casino_lounge from "../../assets/image/casino_lounge.jpg";
-import poker from "../../assets/image/poker.jpg";
-import red_casino from "../../assets/image/red_casino.jpg";
-import poker_light from "../../assets/image/poker_light.jpg";
-import poker_video from "../../assets/video/poker_video.mp4";
-
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { useWindowContext } from "../../context/WindowContext";
 import { FlipBox } from "../Card/Flip";
 import { useWindowResponsiveHeight } from "../../hooks/useWindowHooks";
 
 const IMAGE_LIST = [
-  inner_casino,
-  casino_lounge,
-  poker,
-  red_casino,
-  poker_light,
+  "/assets/image/inner_casino.jpg",
+  "/assets/image/casino_lounge.jpg",
+  "/assets/image/poker.jpg",
+  "/assets/image/red_casino.jpg",
+  "/assets/image/poker_light.jpg",
 ];
+
+const VIDEO_SRC = "/assets/video/poker_video.mp4";
 
 export function DisplayIntro() {
   const theme = useTheme();
@@ -163,7 +158,7 @@ export function DisplayIntro() {
             playsInline
             muted
             loop
-            src={poker_video}
+            src={VIDEO_SRC}
             css={css`
               position: absolute;
               width: 100%;
