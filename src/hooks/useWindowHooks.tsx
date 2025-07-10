@@ -61,12 +61,24 @@ export const useWindowResponsiveHeight = (slope: number, intercept: number) => {
   );
 
   useEffect(() => {
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+
     const updateHeight = () => {
-      setHeight(slope * window.innerWidth + intercept);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const newHeight = slope * window.innerWidth + intercept;
+        setHeight((prevHeight) => {
+          // 값이 충분히 다를 때만 setState
+          if (Math.abs(prevHeight - newHeight) > 1) {
+            return newHeight;
+          }
+          return prevHeight;
+        });
+      }, 100); // 100ms 디바운싱
     };
 
     window.addEventListener("resize", updateHeight);
-    updateHeight(); // 초기화
+    updateHeight();
 
     return () => window.removeEventListener("resize", updateHeight);
   }, [slope, intercept]);

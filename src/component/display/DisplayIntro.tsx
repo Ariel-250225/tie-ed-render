@@ -35,7 +35,7 @@ export function DisplayIntro() {
 
   const { windowWidth } = useWindowContext();
 
-  const responsiveHeight = useWindowResponsiveHeight(0.3655, 150);
+  const responsiveHeight = useWindowResponsiveHeight(0.36501, 189.993);
 
   useEffect(() => {
     setVideoShownIndex(selectedIndex);
@@ -64,7 +64,7 @@ export function DisplayIntro() {
           isolation: isolate;
         `}
       >
-        {selectedIndex === index && (
+        {selectedIndex === index || videoShownIndex === index ? (
           <>
             <div
               css={css`
@@ -156,7 +156,7 @@ export function DisplayIntro() {
               </div>
             </div>
           </>
-        )}
+        ) : null}
         {videoShownIndex === index && (
           <video
             autoPlay

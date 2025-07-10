@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Button, css } from "@mui/material";
 import { ReactElement } from "react";
 import { AppProps, FuncItemProps } from "./ButtonPropsType";
-import { EllipsisCase } from "../../layouts/Layouts";
+import { EllipsisCase } from "../../layouts";
 import { Theme, useTheme } from "@emotion/react";
 
 export function AppItem(props: AppProps) {
