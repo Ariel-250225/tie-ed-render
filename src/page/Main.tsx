@@ -82,7 +82,7 @@ export function Main() {
             font-family: ${theme.mode.font.main.title};
           `}
         >
-          OKGO에서 즐기면 더 좋은 이유
+          The better reason to enjoy on OKGO
         </ContentsTitle>
         <ContentsContainer
           ref={scrollRef}
@@ -140,7 +140,7 @@ export function Main() {
           `}
         >
           <ContentsTitle theme={theme}>
-            당신이 즐기고 싶었던, 모든 카지노
+            Everything you love. Right here.
           </ContentsTitle>
           <HorizontalContainer
             expanded={expanded}

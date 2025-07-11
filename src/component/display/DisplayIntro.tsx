@@ -99,15 +99,16 @@ export function DisplayIntro() {
             >
               <Title theme={theme}>EVOLUTION GAMING</Title>
               <Description theme={theme}>
-                에볼루션 게이밍은 세계에서 가장 유명한 라이브 카지노 중
-                하나입니다.
+                A Evolution gaming is most famous Live Casino provider in the
+                World
                 <br />
                 <br />
-                고객중심의 겜블테이블을 제공하는 이 카지노는
+                This casino, with its player-focused gaming tables,
                 <br />
-                당신에게 황홀한 하루를 선물할 것입니다.
+                will offer you an ecstatic day.
                 <br />
-                <br />이 카지노에서 당신의 황홀경을 만들어보시겠습니까?
+                <br />
+                Ready to find your ecstasy at this casino?
               </Description>
             </div>
             <div
