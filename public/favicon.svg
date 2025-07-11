@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 2600 2600"
+     preserveAspectRatio="xMidYMid meet">
+  <!-- Rounded background with 50px radius -->
+  <rect width="2600" height="2600" fill="#E50514" rx="300" ry="300"/>
+  <!-- Tie shape -->
+  <g transform="translate(0.000000,2600.000000) scale(0.100000,-0.100000)"
+     fill="#000000" stroke="none">
+    <path d="M11155 21374 c-682 -498 -1241 -907 -1242 -908 -2 -1 366 -354 816
+    -785 l818 -782 -18 -87 c-74 -363 -2420 -12324 -2417 -12326 1 -1 742 -493
+    1645 -1094 903 -601 1644 -1092 1647 -1092 4 0 747 493 1652 1095 1607 1070
+    1645 1096 1640 1122 -3 16 -544 2766 -1201 6113 -657 3347 -1203 6126 -1214
+    6177 l-18 92 818 783 c450 430 817 783 816 784 -22 21 -2485 1814 -2492 1814
+    -6 0 -568 -408 -1250 -906z"/>
+  </g>
+</svg>
