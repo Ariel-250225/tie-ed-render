@@ -1,66 +1,88 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic:wght@400;700;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic:wght@400;700;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
     />
 
     <link
-            data-srs=""
-            href="https://www.apple.com/wss/fonts?families=SF+Pro,v3:200,300,400,500,600|SF+Pro+Icons,v3|Apple+Monochrome+Emoji,v3|Apple+Monochrome+Emoji+Ind,v2|Graphik,v1"
-            rel="stylesheet"
+      data-srs=""
+      href="https://www.apple.com/wss/fonts?families=SF+Pro,v3:200,300,400,500,600|SF+Pro+Icons,v3|Apple+Monochrome+Emoji,v3|Apple+Monochrome+Emoji+Ind,v2|Graphik,v1"
+      rel="stylesheet"
     />
 
     <link
-            href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold"
-            rel="stylesheet"
+      href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold"
+      rel="stylesheet"
     />
 
-    <title>Vite + React + TS</title>
+    <title>tie-ed</title>
     <style>
-        body {
-            background: black;
-            height: 100vh;
-        }
+      body {
+        background: black;
+        height: 100vh;
+      }
 
-        .loading-container{
-            width: 100%;
-            height: 100vh;
+      .loading-container {
+        width: 100%;
+        height: 100vh;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
-</head>
-<body>
-<div class="loading-container">
-    <svg id="loading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200" height="200"
-         style="shape-rendering: auto; display: block; background: rgb(255, 255, 255, 0);"
-         xmlns:xlink="http://www.w3.org/1999/xlink">
+  </head>
+  <body>
+    <div class="loading-container">
+      <svg
+        id="loading"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        width="200"
+        height="200"
+        style="
+          shape-rendering: auto;
+          display: block;
+          background: rgb(255, 255, 255, 0);
+        "
+      >
         <g>
-            <circle stroke-dasharray="174.35839227423352 60.119464091411174" r="37" stroke-width="11" stroke="#d2000e"
-                    fill="none" cy="50" cx="50">
-                <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="1s" repeatCount="indefinite" type="rotate"
-                                  attributeName="transform"></animateTransform>
-            </circle>
-            <g></g>
+          <circle
+            stroke-dasharray="174.35839227423352 60.119464091411174"
+            r="37"
+            stroke-width="11"
+            stroke="#d2000e"
+            fill="none"
+            cy="50"
+            cx="50"
+          >
+            <animateTransform
+              keyTimes="0;1"
+              values="0 50 50;360 50 50"
+              dur="1s"
+              repeatCount="indefinite"
+              type="rotate"
+              attributeName="transform"
+            ></animateTransform>
+          </circle>
+          <g></g>
         </g>
-    </svg>
-</div>
+      </svg>
+    </div>
 
-
-<div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
-</body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
