@@ -1,6 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { FixedSizeList as List } from "react-window";
 import { css, Theme, useTheme } from "@emotion/react";
 
@@ -33,18 +40,28 @@ export function InfiniteLeftSlider(props: InfiniteLeftSliderProps) {
   const { rowList, width, containerSize, className, speed = 2 } = props;
   const { itemWidth, height, imageWidth } = containerSize;
 
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const offsetRef = useRef(0);
   const [speedControl, setSpeedControl] = useState<number>(speed);
 
   const listRef = useRef<List | null>(null); // ✅ useRef 타입 수정
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      offsetRef.current += speedControl;
-      listRef.current?.scrollTo(offsetRef.current); // ✅ 호출
-    }, 30);
+    let lastTime = 0;
+    let rafId: number;
 
-    return () => clearInterval(interval);
+    const animate = (now: number) => {
+      if (now - lastTime > 30) {
+        offsetRef.current += speedControl;
+        listRef.current?.scrollTo(offsetRef.current);
+        lastTime = now;
+      }
+      rafId = requestAnimationFrame(animate);
+    };
+
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
   }, [speedControl]);
 
   return (
@@ -75,6 +92,7 @@ export function InfiniteLeftSlider(props: InfiniteLeftSliderProps) {
             rowList={rowList}
             imageWidth={imageWidth}
             height={height}
+            selectedState={{ selectedIndex, setSelectedIndex }}
           />
         )}
       </StyledList>
@@ -88,10 +106,14 @@ function Row(props: {
   style: CSSProperties;
   imageWidth: number;
   height: number;
+  selectedState: {
+    selectedIndex: number | null;
+    setSelectedIndex: Dispatch<SetStateAction<number | null>>;
+  };
 }) {
-  const { rowList, index, style, imageWidth, height } = props;
+  const { rowList, index, style, imageWidth, height, selectedState } = props;
+  const { selectedIndex, setSelectedIndex } = selectedState;
 
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const theme = useTheme();
 
   return (
